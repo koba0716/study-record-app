@@ -23,6 +23,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run tests
+        run: npm test -- --watchAll=false
+
       - name: Build project
         run: npm run build
 
@@ -31,4 +34,3 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         run: firebase deploy --only hosting --token "$FIREBASE_TOKEN"
-     
